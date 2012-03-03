@@ -146,6 +146,15 @@ call matchadd('RedundantSpaces', '\(\s\+$\| \+\ze\t\|\t\zs \+\)\(\%#\)\@!')
 "Toggle line number on/off
 noremap <silent> <F9> :set number!<CR>
 
+"Toggle cursor line/column highlight on/off
+"To override the default color, apply the following settings:
+"ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+highlight CursorLine   cterm=underline
+highlight CursorColumn cterm=none
+set cursorline
+"set cursorcolumn
+nnoremap <silent> <F11> :set cursorline!<CR>
+
 "Toggle highlight search
 noremap <silent> <F12> :set hlsearch!<CR>
 
