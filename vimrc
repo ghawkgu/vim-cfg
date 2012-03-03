@@ -149,8 +149,8 @@ noremap <silent> <F9> :set number!<CR>
 "Toggle cursor line/column highlight on/off
 "To override the default color, apply the following settings:
 "ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-highlight CursorLine   cterm=underline
-highlight CursorColumn cterm=none
+highlight CursorLine   cterm=underline gui=underline
+highlight CursorColumn cterm=none gui=none
 set cursorline
 "set cursorcolumn
 nnoremap <silent> <F11> :set cursorline!<CR>
