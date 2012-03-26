@@ -89,6 +89,8 @@ let $JS_CMD='node'
 
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
