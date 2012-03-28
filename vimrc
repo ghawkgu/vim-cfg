@@ -23,6 +23,7 @@ Bundle 'gmarik/vundle'
 " ...
 
 Bundle 'molokai'
+Bundle 'jellybeans.vim'
 Bundle 'genutils'
 Bundle 'The-NERD-tree'
 Bundle 'bufexplorer.zip'
@@ -33,7 +34,12 @@ Bundle 'taglist-plus'
 Bundle 'fugitive.vim'
 Bundle 'jslint.vim'
 Bundle 'ZenCoding.vim'
-
+Bundle 'cocoa.vim'
+Bundle 'eruby.vim'
+Bundle 'ftpluginruby.vim'
+Bundle 'ruby-matchit'
+Bundle 'ruby.vim'
+"Bundle 'rubycomplete.vim'
 
 filetype plugin indent on     " required! 
 "
@@ -69,7 +75,7 @@ set hlsearch "high-light search
 "set showmatch
 
 "colorscheme ir_black
-let g:molokai_original=1
+let g:molokai_original=0
 colorscheme molokai
 
 "call pathogen#infect()
@@ -89,8 +95,10 @@ let $JS_CMD='node'
 
 filetype plugin on
 set ofu=syntaxcomplete#Complete
-autocmd Filetype html setlocal ts=2 sw=2 sts=2 expandtab
-autocmd Filetype ruby setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype html  setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype ruby  setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype eruby setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype yaml  setlocal ts=2 sw=2 sts=2 expandtab
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
