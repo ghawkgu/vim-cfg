@@ -119,8 +119,14 @@ function! GetStatusEx()
     return str
 endfunction
 
-" Powerline
-" let g:Powerline_symbols = 'fancy'
+" Powerline settings
+let g:Powerline_symbols = 'fancy'
+if has('gui_running')
+  " Set font for macvim. The font can be downloaded from https://gist.github.com/1838072 .
+  set guifont=Monaco\ for\ Powerline:h12
+  " set transparency=5        " set transparent window
+  " set guioptions=egmrt  " hide the gui menubar
+endif
 
 "ステータスバーの表示
 set statusline=%<%f%h\ %y%m%r\ %{GetStatusEx()}\ %{fugitive#statusline()}%=%b\ 0x%B\ \ \ %l,%c%V\ %P
