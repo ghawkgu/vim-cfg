@@ -1,3 +1,11 @@
+if has("win32")
+    let $VIMFILES = $VIM.'/vimfiles'
+    let $V = $VIM.'/_vimrc'
+else
+    let $VIMFILES = $HOME.'/.vim'
+    let $V = $HOME.'/.vimrc'
+endif
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -24,13 +32,15 @@ Bundle 'gmarik/vundle'
 
 Bundle 'molokai'
 Bundle 'jellybeans.vim'
+Bundle 'tir_black'
 Bundle 'genutils'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 Bundle 'The-NERD-tree'
 Bundle 'bufexplorer.zip'
 Bundle 'lookupfile'
-Bundle 'snipMate'
-Bundle 'snipmate-snippets'
+" Bundle 'snipMate'
+" Bundle 'snipmate-snippets'
+Bundle 'neocomplcache'
 Bundle 'taglist-plus'
 Bundle 'fugitive.vim'
 Bundle 'jslint.vim'
@@ -40,7 +50,7 @@ Bundle 'eruby.vim'
 Bundle 'ftpluginruby.vim'
 Bundle 'ruby-matchit'
 Bundle 'ruby.vim'
-"Bundle 'rubycomplete.vim'
+Bundle 'rubycomplete.vim'
 
 filetype plugin indent on     " required! 
 "
@@ -76,8 +86,8 @@ set hlsearch "high-light search
 "set showmatch
 
 "colorscheme ir_black
-let g:molokai_original=0
-colorscheme molokai
+let g:molokai_original=1
+colorscheme jellybeans
 
 "call pathogen#infect()
 
@@ -118,6 +128,9 @@ function! GetStatusEx()
     endif
     return str
 endfunction
+
+" neocomplcache
+source $VIMFILES/neocomplcache.vim
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
