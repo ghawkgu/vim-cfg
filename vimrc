@@ -25,6 +25,7 @@ Bundle 'gmarik/vundle'
 Bundle 'molokai'
 Bundle 'jellybeans.vim'
 Bundle 'genutils'
+Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 Bundle 'The-NERD-tree'
 Bundle 'bufexplorer.zip'
 Bundle 'lookupfile'
@@ -117,6 +118,9 @@ function! GetStatusEx()
     endif
     return str
 endfunction
+
+" Powerline
+" let g:Powerline_symbols = 'fancy'
 
 "ステータスバーの表示
 set statusline=%<%f%h\ %y%m%r\ %{GetStatusEx()}\ %{fugitive#statusline()}%=%b\ 0x%B\ \ \ %l,%c%V\ %P
