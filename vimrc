@@ -32,6 +32,8 @@ Bundle 'gmarik/vundle'
 
 Bundle 'molokai'
 Bundle 'jellybeans.vim'
+Bundle 'wombat256.vim'
+Bundle 'Wombat'
 Bundle 'tir_black'
 Bundle 'genutils'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
@@ -88,7 +90,8 @@ set hlsearch "high-light search
 
 "colorscheme ir_black
 let g:molokai_original=1
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme wombat256mod
 
 "call pathogen#infect()
 
