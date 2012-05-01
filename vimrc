@@ -40,7 +40,8 @@ Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 Bundle 'The-NERD-tree'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 " Bundle 'bufexplorer.zip'
-Bundle 'Command-T' "Remember to build the plugin with the system ruby 1.8.7 on Mac OS X
+" Command-T:  Remember to build the plugin with the system ruby 1.8.7 on Mac OS X
+Bundle 'Command-T'
 Bundle 'lookupfile'
 " Bundle 'snipMate'
 " Bundle 'snipmate-snippets'
