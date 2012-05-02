@@ -90,6 +90,8 @@ set hlsearch "high-light search
 "this really bothers me.
 "set showmatch
 
+set clipboard=unnamed
+
 "colorscheme ir_black
 let g:molokai_original=1
 "colorscheme jellybeans
