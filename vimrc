@@ -35,6 +35,8 @@ Bundle 'jellybeans.vim'
 Bundle 'wombat256.vim'
 Bundle 'Wombat'
 Bundle 'tir_black'
+Bundle 'sexy-railscasts'
+
 Bundle 'genutils'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 Bundle 'The-NERD-tree'
@@ -56,6 +58,8 @@ Bundle 'ftpluginruby.vim'
 Bundle 'ruby-matchit'
 Bundle 'ruby.vim'
 Bundle 'rubycomplete.vim'
+" Bug-free rails.vim
+Bundle 'tpope/vim-rails'
 
 filetype plugin indent on     " required! 
 "
@@ -96,6 +100,7 @@ set clipboard=unnamed
 let g:molokai_original=1
 "colorscheme jellybeans
 colorscheme wombat256mod
+"colorscheme railscasts
 
 "call pathogen#infect()
 
