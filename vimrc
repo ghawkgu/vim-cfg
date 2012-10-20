@@ -48,6 +48,7 @@ Bundle 'lookupfile'
 " Bundle 'snipMate'
 " Bundle 'snipmate-snippets'
 Bundle 'neocomplcache'
+Bundle 'https://github.com/Shougo/neosnippet.git'
 Bundle 'taglist-plus'
 Bundle 'fugitive.vim'
 Bundle 'jslint.vim'
@@ -285,6 +286,6 @@ let g:user_zen_settings = {
 \  }
 \}
 
-let g:user_zen_expandabbr_key = '<c-e>'
+let g:user_zen_expandabbr_key = '<c-p>'
 
 let g:use_zen_complete_tag = 1
