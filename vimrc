@@ -196,7 +196,7 @@ noremap <silent> <F9> :set number!<CR>
 "Toggle cursor line/column highlight on/off
 "To override the default color, apply the following settings:
 "ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-"highlight CursorLine   cterm=underline gui=underline
+highlight CursorLine   cterm=underline gui=underline
 "highlight CursorLine cterm=none gui=none
 "highlight CursorColumn cterm=none gui=none
 set cursorline
@@ -287,5 +287,10 @@ let g:user_zen_settings = {
 \}
 
 let g:user_zen_expandabbr_key = '<c-p>'
-
 let g:use_zen_complete_tag = 1
+
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
