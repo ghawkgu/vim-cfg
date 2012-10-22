@@ -13,7 +13,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
@@ -64,7 +64,7 @@ Bundle 'rubycomplete.vim'
 " Bug-free rails.vim
 Bundle 'tpope/vim-rails'
 
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 "
 " Brief help
 " :BundleList          - list configured bundles
@@ -292,8 +292,12 @@ let g:user_zen_settings = {
 let g:user_zen_expandabbr_key = '<c-p>'
 let g:use_zen_complete_tag = 1
 
+" Highlight the cursorline only in the active window.
 augroup CursorLine
     au!
     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     au WinLeave * setlocal nocursorline
 augroup END
+
+" Eliminate the trailing space.
+autocmd BufWritePre * :%s/\s\+$//e
