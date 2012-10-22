@@ -35,7 +35,9 @@ Bundle 'jellybeans.vim'
 Bundle 'wombat256.vim'
 Bundle 'Wombat'
 Bundle 'tir_black'
+Bundle 'railscasts'
 Bundle 'sexy-railscasts'
+Bundle 'candy.vim'
 
 Bundle 'genutils'
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
@@ -102,6 +104,7 @@ let g:molokai_original=1
 "colorscheme jellybeans
 colorscheme wombat256mod
 "colorscheme railscasts
+"colorscheme sexy-railscasts
 
 "call pathogen#infect()
 
@@ -112,7 +115,7 @@ endif
 set directory=~/vim-tmp,~/tmp,/var/tmp,/tmp
 set backupdir=~/vim-bak,~/tmp
 
-" Use the independent snippets directory.
+" Use the independent snippets directory. (snipMate)
 let g:snippets_dir = '~/.vim/snippets'
 
 " Use Node.js for JavaScript interpretation
