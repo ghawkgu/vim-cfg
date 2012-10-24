@@ -80,7 +80,7 @@ set t_Co=256
 syntax on
 "set nu
 set nocompatible
-set numberwidth=7
+set numberwidth=5
 set enc=utf-8
 
 set wildmenu
