@@ -169,8 +169,12 @@ set cmdheight=1
 set showcmd
 
 "Key mapping for insert mode
-inoremap <C-F> <C-O>l
-inoremap <C-B> <C-O>h
+"inoremap <C-F> <C-O>l
+"inoremap <C-B> <C-O>h
+inoremap <C-F> <Right>
+inoremap <C-B> <Left>
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
 
 "command-line の編集
 cnoremap <C-F> <Right>
