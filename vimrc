@@ -62,7 +62,9 @@ Bundle 'eruby.vim'
 Bundle 'ftpluginruby.vim'
 " Bundle 'ruby-matchit'
 Bundle 'ruby.vim'
-Bundle 'rubycomplete.vim'
+if has('ruby')
+  Bundle 'rubycomplete.vim'
+endif
 " Bug-free rails.vim
 Bundle 'tpope/vim-rails'
 
