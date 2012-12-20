@@ -310,3 +310,6 @@ augroup END
 
 " Eliminate the trailing space.
 autocmd BufWritePre * :%s/\s\+$//e
+
+" CtrlP's key mapping
+let g:ctrlp_map = '<leader>t'
