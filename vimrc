@@ -302,7 +302,7 @@ let g:user_zen_settings = {
 \  }
 \}
 
-let g:user_zen_expandabbr_key = '<c-p>'
+let g:user_zen_expandabbr_key = '<leader>e'
 let g:use_zen_complete_tag = 1
 
 function! EnableCursorLine()
