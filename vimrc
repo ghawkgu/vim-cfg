@@ -40,7 +40,15 @@ Bundle 'sexy-railscasts'
 Bundle 'candy.vim'
 
 Bundle 'genutils'
+
+" NOTICE: To use the nightly build 'new' powerline, which is rewritten in python,
+" We have to install the python package with the following command.
+" pip install --user git+git://github.com/Lokaltog/powerline
+" Check https://powerline.readthedocs.org for more infomation.
+" And uncomment the following line to make vim load it.
+"set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+
 Bundle 'The-NERD-tree'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 " Bundle 'bufexplorer.zip'
