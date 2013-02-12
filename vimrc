@@ -30,6 +30,8 @@ Bundle 'gmarik/vundle'
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
+Bundle 'surround.vim'
+
 Bundle 'molokai'
 Bundle 'jellybeans.vim'
 Bundle 'wombat256.vim'
