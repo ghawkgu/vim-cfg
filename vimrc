@@ -305,10 +305,20 @@ let g:user_zen_settings = {
 let g:user_zen_expandabbr_key = '<c-p>'
 let g:use_zen_complete_tag = 1
 
+function! EnableCursorLine()
+    " Disable the cursorline for tagbar, because there is a great performance
+    " hit if it is enabled.
+    if &ft =~ 'tagbar'
+        setlocal nocursorline
+        return
+    endif
+    setlocal cursorline
+endfunction
+
 " Highlight the cursorline only in the active window.
 augroup CursorLine
     au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au VimEnter,WinEnter,BufWinEnter * call EnableCursorLine()
     au WinLeave * setlocal nocursorline
 augroup END
 
