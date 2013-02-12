@@ -54,7 +54,7 @@ Bundle 'ack.vim'
 " Bundle 'snipmate-snippets'
 Bundle 'neocomplcache'
 Bundle 'https://github.com/Shougo/neosnippet.git'
-Bundle 'taglist-plus'
+Bundle 'Tagbar'
 Bundle 'fugitive.vim'
 Bundle 'jslint.vim'
 Bundle 'ZenCoding.vim'
@@ -278,11 +278,7 @@ autocmd FileType css nmap <F5> :!csstidy %:p --preserve_css=false --remove_bslas
 "autocmd FileType dosbatch nmap <F5> :!%<CR><CR>
 
 set tags+=./.tags
-"Taglist, aka. Tlist
-let g:Tlist_Use_Right_Window=1
-let g:Tlist_Use_Horiz_Window=0
-let g:Tlist_WinWidth=30
-nnoremap <silent> <F3> :TlistToggle<CR>
+nnoremap <silent> <F3> :TagbarToggle<CR>
 
 "Zencoding setting
 let g:user_zen_settings = {
