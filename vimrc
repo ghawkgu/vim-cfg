@@ -31,6 +31,7 @@ Bundle 'gmarik/vundle'
 " ...
 
 Bundle 'surround.vim'
+Bundle 'EasyMotion'
 
 Bundle 'molokai'
 Bundle 'jellybeans.vim'
