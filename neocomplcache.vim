@@ -23,6 +23,7 @@ if !exists("g:neosnippet#snippets_directory")
     let g:neosnippet#snippets_directory = ''
 endif
 let g:neosnippet#snippets_directory = $VIMFILES."/bundle/neosnippet/autoload/neosnippet/snippets"
+let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
