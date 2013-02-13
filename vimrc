@@ -69,9 +69,7 @@ Bundle 'fugitive.vim'
 Bundle 'jslint.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'cocoa.vim'
-Bundle 'eruby.vim'
-Bundle 'ftpluginruby.vim'
-" Bundle 'ruby-matchit'
+
 Bundle 'ruby.vim'
 if has('ruby')
   Bundle 'rubycomplete.vim'
