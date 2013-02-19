@@ -323,7 +323,14 @@ augroup CursorLine
 augroup END
 
 " Eliminate the trailing space.
-autocmd BufWritePre * :%s/\s\+$//e
+function! RemoveTrailingSpaces()
+    if &ft =~ 'markdown'
+        return
+    endif
+    :%s/\s\+$//e
+endfunction
+
+autocmd BufWritePre * call RemoveTrailingSpaces()
 
 " CtrlP's key mapping
 let g:ctrlp_map = '<leader>t'
