@@ -134,6 +134,8 @@ let g:snippets_dir = '~/.vim/snippets'
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
 
+" Disable the scratch window while the auto-completion is working.
+set completeopt=menu,menuone,longest
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 autocmd Filetype html  setlocal ts=2 sw=2 sts=2 expandtab
