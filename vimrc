@@ -112,7 +112,9 @@ set hlsearch "high-light search
 "this really bothers me.
 "set showmatch
 
-set clipboard=unnamed
+if $TMUX == ''
+    set clipboard+=unnamed
+endif
 
 "colorscheme ir_black
 let g:molokai_original=1
