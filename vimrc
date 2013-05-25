@@ -76,6 +76,8 @@ if has('ruby')
 endif
 " Bug-free rails.vim
 Bundle 'tpope/vim-rails'
+Bundle 'spllr/vim-padrino'
+Bundle 'slim-template/vim-slim'
 
 filetype plugin indent on     " required!
 "
@@ -336,3 +338,6 @@ autocmd BufWritePre * call RemoveTrailingSpaces()
 
 " CtrlP's key mapping
 let g:ctrlp_map = '<leader>t'
+
+" vim-padrino's bug
+let g:padrino_statusline=0
