@@ -44,16 +44,15 @@ Bundle 'candy.vim'
 
 Bundle 'genutils'
 
-" NOTICE: To use the nightly build 'new' powerline, which is rewritten in python,
-" We have to install the python package with the following command.
-" pip install --user git+git://github.com/Lokaltog/powerline
-" Check https://powerline.readthedocs.org for more infomation.
-" And uncomment the following line to make vim load it.
-"set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
-Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+" Use vim-airline instead of powerline
+Bundle 'bling/vim-airline'
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts=1
 
 Bundle 'The-NERD-tree'
-Bundle 'git://github.com/scrooloose/nerdcommenter.git'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'junegunn/vim-easy-align'
+
 " Bundle 'bufexplorer.zip'
 " Command-T:  Remember to build the plugin with the system ruby 1.8.7 on Mac OS X
 " Bundle 'Command-T'
@@ -65,7 +64,7 @@ Bundle 'snipmate-snippets'
 Bundle 'neocomplcache'
 Bundle 'https://github.com/Shougo/neosnippet.git'
 Bundle 'Tagbar'
-Bundle 'fugitive.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'jslint.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'cocoa.vim'
@@ -78,6 +77,8 @@ endif
 Bundle 'tpope/vim-rails'
 Bundle 'spllr/vim-padrino'
 Bundle 'slim-template/vim-slim'
+
+Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 
 filetype plugin indent on     " required!
 "
@@ -343,3 +344,8 @@ let g:ctrlp_map = '<leader>t'
 
 " vim-padrino's bug
 let g:padrino_statusline=0
+
+let g:used_javascript_libs = 'jquery,angularjs'
+
+" Easy-align
+vnoremap <silent> <Enter> :EasyAlign<cr>
