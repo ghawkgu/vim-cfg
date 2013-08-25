@@ -52,6 +52,8 @@ let g:airline_powerline_fonts=1
 Bundle 'The-NERD-tree'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'ap/vim-css-color'
 
 " Bundle 'bufexplorer.zip'
 " Command-T:  Remember to build the plugin with the system ruby 1.8.7 on Mac OS X
