@@ -55,16 +55,16 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'ap/vim-css-color'
 
-" Bundle 'bufexplorer.zip'
 " Command-T:  Remember to build the plugin with the system ruby 1.8.7 on Mac OS X
 " Bundle 'Command-T'
 Bundle 'ctrlp.vim'
 Bundle 'matchit.zip'
 Bundle 'ack.vim'
-" Bundle 'snipMate'
-Bundle 'snipmate-snippets'
-Bundle 'neocomplcache'
+
+Bundle 'honza/vim-snippets'
+Bundle 'https://github.com/Shougo/neocomplete.git'
 Bundle 'https://github.com/Shougo/neosnippet.git'
+
 Bundle 'Tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jslint.vim'
@@ -136,9 +136,6 @@ endif
 set directory=~/vim-tmp,~/tmp,/var/tmp,/tmp
 set backupdir=~/vim-bak,~/tmp
 
-" Use the independent snippets directory. (snipMate)
-let g:snippets_dir = '~/.vim/snippets'
-
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
 
@@ -169,8 +166,8 @@ function! GetStatusEx()
     return str
 endfunction
 
-" neocomplcache
-source $VIMFILES/neocomplcache.vim
+" neocomplete
+source $VIMFILES/neocomplete.vim
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
