@@ -99,7 +99,7 @@ syntax on
 "set nu
 set nocompatible
 set numberwidth=5
-set fencs=utf-8,gb18030,gbk,eucjp,shiftjis
+set fencs=utf-8,eucjp,shiftjis,gb18030,gbk
 set enc=utf-8
 
 set wildmenu
