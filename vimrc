@@ -68,7 +68,8 @@ Bundle 'https://github.com/Shougo/neosnippet.git'
 Bundle 'Tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jslint.vim'
-Bundle 'ZenCoding.vim'
+" Bundle 'ZenCoding.vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'cocoa.vim'
 
 Bundle 'ruby.vim'
@@ -305,6 +306,8 @@ let g:user_zen_settings = {
 
 let g:user_zen_expandabbr_key = '<leader>e'
 let g:use_zen_complete_tag = 1
+
+let g:user_emmet_expandabbr_key = '<leader>e'
 
 function! EnableCursorLine()
     " Disable the cursorline for tagbar, because there is a great performance
