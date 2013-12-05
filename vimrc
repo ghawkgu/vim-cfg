@@ -30,7 +30,7 @@ Bundle 'gmarik/vundle'
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
-Bundle 'surround.vim'
+Bundle 'tpope/vim-surround'
 Bundle 'EasyMotion'
 
 Bundle 'molokai'
@@ -78,7 +78,7 @@ if has('ruby')
   Bundle 'rubycomplete.vim'
 endif
 " Bug-free rails.vim
-Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rails.git'
 Bundle 'spllr/vim-padrino'
 Bundle 'slim-template/vim-slim'
 
