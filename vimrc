@@ -67,7 +67,6 @@ Bundle 'https://github.com/Shougo/neosnippet.git'
 
 Bundle 'Tagbar'
 Bundle 'tpope/vim-fugitive'
-Bundle 'jslint.vim'
 Bundle 'wookiehangover/jshint.vim'
 " Bundle 'ZenCoding.vim'
 Bundle 'mattn/emmet-vim'
