@@ -148,6 +148,7 @@ autocmd Filetype html  setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype ruby  setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype eruby setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yaml  setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype javascript  setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype text  setlocal textwidth=0
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
