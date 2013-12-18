@@ -31,6 +31,7 @@ Bundle 'gmarik/vundle'
 " ...
 
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'EasyMotion'
 
 Bundle 'molokai'
