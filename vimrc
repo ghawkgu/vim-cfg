@@ -235,7 +235,7 @@ noremap <silent> <F9> :set number!<CR>
 highlight CursorLine   cterm=underline gui=underline
 "highlight CursorLine cterm=none gui=none
 "highlight CursorColumn cterm=none gui=none
-set cursorline
+set nocursorline
 "set cursorcolumn
 nnoremap <silent> <F11> :set cursorline!<CR>
 
@@ -325,11 +325,11 @@ function! EnableCursorLine()
 endfunction
 
 " Highlight the cursorline only in the active window.
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * call EnableCursorLine()
-    au WinLeave * setlocal nocursorline
-augroup END
+" augroup CursorLine
+"     au!
+"     au VimEnter,WinEnter,BufWinEnter * call EnableCursorLine()
+"     au WinLeave * setlocal nocursorline
+" augroup END
 
 " Eliminate the trailing space.
 function! RemoveTrailingSpaces()
@@ -351,3 +351,22 @@ let g:used_javascript_libs = 'jquery,angularjs'
 
 " Easy-align
 vnoremap <silent> <Enter> :EasyAlign<cr>
+
+" Enable the curline and listchars only in the insert mode
+function! EnterInsertMode()
+    setlocal listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:_,trail:-
+    setlocal list
+    setlocal cursorline
+endfunction
+
+function! ExitInsertMode()
+    setlocal listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:_,trail:-
+    setlocal nolist
+    setlocal nocursorline
+endfunction
+
+augroup HighlightSpecialKeys
+    au!
+    au InsertEnter * call EnterInsertMode()
+    au InsertLeave * call ExitInsertMode()
+augroup END
