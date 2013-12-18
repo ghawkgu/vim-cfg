@@ -219,7 +219,8 @@ nnoremap <C-S> :%s/<C-R><C-W>//gc<Left><Left><Left>
 
 "Toggle list mode on/off
 noremap <silent> <F10> :set list!<CR>
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
+" set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:_,trail:-
 highlight SpecialKey term=standout ctermbg=yellow guibg=yellow
 highlight RedundantSpaces term=standout ctermbg=Grey guibg=#ffddcc
 call matchadd('RedundantSpaces', '\(\s\+$\| \+\ze\t\|\t\zs \+\)\(\%#\)\@!')
