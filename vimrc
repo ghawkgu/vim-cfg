@@ -112,6 +112,7 @@ set smarttab
 set expandtab
 set smartindent
 set incsearch
+set smartcase
 
 set hlsearch "high-light search
 "The cursor jumps to the paired one if showmatch is turned on,
