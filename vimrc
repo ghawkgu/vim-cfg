@@ -354,13 +354,13 @@ vnoremap <silent> <Enter> :EasyAlign<cr>
 
 " Enable the curline and listchars only in the insert mode
 function! EnterInsertMode()
-    setlocal listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:_,trail:-
+    setlocal listchars-=eol:¬
     setlocal list
     setlocal cursorline
 endfunction
 
 function! ExitInsertMode()
-    setlocal listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:_,trail:-
+    setlocal listchars+=eol:¬
     setlocal nolist
     setlocal nocursorline
 endfunction
