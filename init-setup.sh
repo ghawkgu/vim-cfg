@@ -1,6 +1,7 @@
 #! /bin/bash
-mkdir ~/vim-tmp
-mkdir ~/vim-bak
+VIMFILES=$HOME/.vim
+mkdir $VIMFILES/tmp
+mkdir $VIMFILES/bak
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/gmarik/vundle.git $VIMFILES/bundle/vundle
 

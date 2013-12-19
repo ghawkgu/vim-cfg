@@ -1,1 +1,5 @@
 bundle
+tmp/**/*
+bak/**/*
+!tmp/.empty
+!bak/.empty

@@ -137,8 +137,8 @@ if has('gui_running')
     set lines=50 columns=160
 endif
 
-set directory=~/vim-tmp,~/tmp,/var/tmp,/tmp
-set backupdir=~/vim-bak,~/tmp
+set directory=$VIMFILES/tmp//
+set backupdir=$VIMFILES/bak
 
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
