@@ -97,6 +97,7 @@ filetype plugin indent on     " required!
 
 "----------- Begin with the configuration -----------
 set t_Co=256
+set t_ut=
 syntax on
 "set nu
 set nocompatible
