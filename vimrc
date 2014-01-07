@@ -212,7 +212,8 @@ cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
 "全置換マップ
-vnoremap <C-S> y:%s/<C-R>"//gc<Left><Left><Left>
+" vnoremap <C-S> y:%s/<C-R>"//gc<Left><Left><Left>
+vnoremap <C-S> y:%s/<C-R>=escape(@", '.*/\[]^$+?\|{}()')<CR>//gc<Left><Left><Left>
 nnoremap <C-S> :%s/<C-R><C-W>//gc<Left><Left><Left>
 
 "LookupFile
