@@ -1,3 +1,7 @@
+let g:neosnippet#disable_runtime_snippets = {
+\   '_' : 1,
+\ }
+
 "Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -20,4 +24,4 @@ if !exists("g:neosnippet#snippets_directory")
     let g:neosnippet#snippets_directory = ''
 endif
 " let g:neosnippet#snippets_directory = $VIMFILES."/bundle/neosnippet/autoload/neosnippet/snippets"
-let g:neosnippet#snippets_directory = $VIMFILES."/bundle/vim-snippets/snippets"
+let g:neosnippet#snippets_directory = $VIMFILES."/my-snippets" . "," . $VIMFILES."/snippets"
