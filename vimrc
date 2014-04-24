@@ -63,8 +63,10 @@ Bundle 'matchit.zip'
 Bundle 'ack.vim'
 
 Bundle 'honza/vim-snippets'
-Bundle 'https://github.com/Shougo/neocomplete.git'
-Bundle 'https://github.com/Shougo/neosnippet.git'
+" Bundle 'https://github.com/Shougo/neocomplete.git'
+" Bundle 'https://github.com/Shougo/neosnippet.git'
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+Bundle 'https://github.com/vim-scripts/UltiSnips.git'
 
 Bundle 'Tagbar'
 Bundle 'tpope/vim-fugitive'
@@ -173,8 +175,11 @@ function! GetStatusEx()
     return str
 endfunction
 
-" neocomplete
-source $VIMFILES/neocomplete.vim
+" Auto complete settings
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" let g:UltiSnipsExpandTrigger="<s-tab>"
+source $VIMFILES/ycm_with_ultrisnip.vim
+" source $VIMFILES/neocomplete.vim
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
