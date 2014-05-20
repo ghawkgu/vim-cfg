@@ -389,3 +389,18 @@ augroup HighlightSpecialKeys
 augroup END
 
 let g:vim_markdown_folding_disabled=1
+
+" Fugitive {{{
+let g:fugitive_github_domains = ['github.com']
+
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>ga :Gadd<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gco :Gcheckout<cr>
+nnoremap <leader>gci :Gcommit<cr>
+nnoremap <leader>gm :Gmove<cr>
+nnoremap <leader>gr :Gremove<cr>
+nnoremap <leader>gl :! git lg <cr>:wincmd \|<cr>
+" }}}
