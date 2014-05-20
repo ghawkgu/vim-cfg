@@ -240,8 +240,8 @@ noremap <silent> <F9> :set number!<CR>
 "Toggle cursor line/column highlight on/off
 "To override the default color, apply the following settings:
 "ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-highlight CursorLine   cterm=underline gui=underline
-"highlight CursorLine cterm=none gui=none
+" highlight CursorLine cterm=underline gui=underline
+highlight CursorLine term=none cterm=none gui=none
 "highlight CursorColumn cterm=none gui=none
 set nocursorline
 "set cursorcolumn
@@ -364,12 +364,14 @@ vnoremap <silent> <Enter> :EasyAlign<cr>
 function! EnterInsertMode()
     setlocal listchars-=eol:¬
     setlocal list
+    highlight CursorLine term=underline cterm=underline gui=underline
     setlocal cursorline
 endfunction
 
 function! ExitInsertMode()
     setlocal listchars+=eol:¬
     setlocal nolist
+    highlight CursorLine term=none cterm=none gui=none
     setlocal nocursorline
 endfunction
 
