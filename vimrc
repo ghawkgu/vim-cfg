@@ -218,6 +218,12 @@ cnoremap <C-B> <Left>
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
+" Easy window navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 "全置換マップ
 " vnoremap <C-S> y:%s/<C-R>"//gc<Left><Left><Left>
 vnoremap <C-S> y:%s/<C-R>=escape(@", '.*/\[]^$+?\|{}()')<CR>//gc<Left><Left><Left>
