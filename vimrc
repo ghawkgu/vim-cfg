@@ -387,3 +387,5 @@ augroup HighlightSpecialKeys
     au InsertEnter * call EnterInsertMode()
     au InsertLeave * call ExitInsertMode()
 augroup END
+
+let g:vim_markdown_folding_disabled=1
