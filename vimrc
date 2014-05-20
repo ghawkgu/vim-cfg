@@ -116,6 +116,7 @@ set smarttab
 set expandtab
 set smartindent
 set incsearch
+set ignorecase
 set smartcase
 
 set hlsearch "high-light search
