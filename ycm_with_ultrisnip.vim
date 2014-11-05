@@ -14,7 +14,7 @@ endfunction
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
-let g:UltiSnipsSnippetDirectories=["us-snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "us-snippets"]
 
 let g:ycm_key_list_select_completion   = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
