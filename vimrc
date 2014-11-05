@@ -120,6 +120,8 @@ set incsearch
 set ignorecase
 set smartcase
 
+set lazyredraw
+
 set hlsearch "high-light search
 "The cursor jumps to the paired one if showmatch is turned on,
 "this really bothers me.
@@ -251,7 +253,7 @@ noremap <silent> <F9> :set number!<CR>
 " highlight CursorLine cterm=underline gui=underline
 highlight CursorLine term=none cterm=none gui=none
 "highlight CursorColumn cterm=none gui=none
-set nocursorline
+" set nocursorline
 "set cursorcolumn
 nnoremap <silent> <F11> :set cursorline!<CR>
 
@@ -341,11 +343,11 @@ function! EnableCursorLine()
 endfunction
 
 " Highlight the cursorline only in the active window.
-" augroup CursorLine
-"     au!
-"     au VimEnter,WinEnter,BufWinEnter * call EnableCursorLine()
-"     au WinLeave * setlocal nocursorline
-" augroup END
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * call EnableCursorLine()
+    au WinLeave * setlocal nocursorline
+augroup END
 
 " Eliminate the trailing space.
 function! RemoveTrailingSpaces()
@@ -373,14 +375,14 @@ function! EnterInsertMode()
     setlocal listchars-=eol:¬
     setlocal list
     highlight CursorLine term=underline cterm=underline gui=underline
-    setlocal cursorline
+    " setlocal cursorline
 endfunction
 
 function! ExitInsertMode()
     setlocal listchars+=eol:¬
     setlocal nolist
     highlight CursorLine term=none cterm=none gui=none
-    setlocal nocursorline
+    " setlocal nocursorline
 endfunction
 
 augroup HighlightSpecialKeys
@@ -405,3 +407,5 @@ nnoremap <leader>gm :Gmove<cr>
 nnoremap <leader>gr :Gremove<cr>
 nnoremap <leader>gl :! git lg <cr>:wincmd \|<cr>
 " }}}
+
+highlight SpellBad cterm=standout ctermfg=red ctermbg=none
