@@ -270,7 +270,7 @@ noremap <silent> <F12> :set hlsearch!<CR>
 
 "Toggle NERD tree
 let g:NERDTreeWinPos="left"
-let g:NERDTreeWinSize=30
+let g:NERDTreeWinSize=40
 noremap <silent> <F2> :NERDTreeToggle<CR>
 
 " Close all open buffers on entering a window if the only
