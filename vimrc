@@ -9,6 +9,14 @@ endif
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when xterm-keys is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -409,3 +417,9 @@ nnoremap <leader>gl :! git lg <cr>:wincmd \|<cr>
 " }}}
 
 highlight SpellBad cterm=standout ctermfg=red ctermbg=none
+
+" resize current buffer by +/- 5
+nnoremap <S-Left> :vertical resize -5<cr>
+nnoremap <S-Down> :resize +5<cr>
+nnoremap <S-Up> :resize -5<cr>
+nnoremap <S-Right> :vertical resize +5<cr>
