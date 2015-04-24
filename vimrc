@@ -18,84 +18,86 @@ if &term =~ '^screen'
 endif
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My Bundles here:
 "
 " original repos on github
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'Lokaltog/vim-easymotion'
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
+" Plugin 'L9'
+" Plugin 'FuzzyFinder'
 " non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " ...
 
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'EasyMotion'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'EasyMotion'
 
-Bundle 'molokai'
-Bundle 'jellybeans.vim'
-Bundle 'wombat256.vim'
-Bundle 'Wombat'
-Bundle 'tir_black'
-Bundle 'railscasts'
-Bundle 'sexy-railscasts'
-Bundle 'candy.vim'
+Plugin 'molokai'
+Plugin 'jellybeans.vim'
+Plugin 'wombat256.vim'
+Plugin 'Wombat'
+Plugin 'tir_black'
+Plugin 'railscasts'
+Plugin 'sexy-railscasts'
+Plugin 'candy.vim'
 
-Bundle 'genutils'
+Plugin 'genutils'
 
 " Use vim-airline instead of powerline
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts=1
 
-Bundle 'The-NERD-tree'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'ap/vim-css-color'
+Plugin 'The-NERD-tree'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'ap/vim-css-color'
 
 " Command-T:  Remember to build the plugin with the system ruby 1.8.7 on Mac OS X
-" Bundle 'Command-T'
-Bundle 'ctrlp.vim'
-Bundle 'matchit.zip'
-" Bundle 'ack.vim'
-Bundle 'rking/ag.vim'
+" Plugin 'Command-T'
+Plugin 'ctrlp.vim'
+Plugin 'matchit.zip'
+" Plugin 'ack.vim'
+Plugin 'rking/ag.vim'
 
-Bundle 'honza/vim-snippets'
-" Bundle 'https://github.com/Shougo/neocomplete.git'
-" Bundle 'https://github.com/Shougo/neosnippet.git'
-Bundle 'https://github.com/Valloric/YouCompleteMe.git'
-Bundle 'https://github.com/vim-scripts/UltiSnips.git'
+Plugin 'honza/vim-snippets'
+" Plugin 'https://github.com/Shougo/neocomplete.git'
+" Plugin 'https://github.com/Shougo/neosnippet.git'
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'https://github.com/vim-scripts/UltiSnips.git'
 
-Bundle 'Tagbar'
-Bundle 'tpope/vim-fugitive'
-Bundle 'wookiehangover/jshint.vim'
-" Bundle 'ZenCoding.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'cocoa.vim'
+Plugin 'Tagbar'
+Plugin 'tpope/vim-fugitive'
+Plugin 'wookiehangover/jshint.vim'
+" Plugin 'ZenCoding.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'cocoa.vim'
 
-Bundle 'ruby.vim'
+Plugin 'ruby.vim'
 if has('ruby')
-  Bundle 'rubycomplete.vim'
+  Plugin 'rubycomplete.vim'
 endif
 " Bug-free rails.vim
-Bundle 'tpope/vim-rails.git'
-Bundle 'spllr/vim-padrino'
-Bundle 'slim-template/vim-slim'
+Plugin 'tpope/vim-rails.git'
+Plugin 'spllr/vim-padrino'
+Plugin 'slim-template/vim-slim'
 
-Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+Plugin 'kchmck/vim-coffee-script'
 
+
+call vundle#end()
 filetype plugin indent on     " required!
 "
 " Brief help
