@@ -41,6 +41,7 @@ Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'EasyMotion'
+Plugin 'DrawIt'
 
 Plugin 'molokai'
 Plugin 'jellybeans.vim'
