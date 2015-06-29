@@ -97,6 +97,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Plugin 'kchmck/vim-coffee-script'
 
+Plugin 'editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -274,7 +275,8 @@ noremap <silent> <F12> :set hlsearch!<CR>
 "Toggle NERD tree
 let g:NERDTreeWinPos="left"
 let g:NERDTreeWinSize=40
-noremap <silent> <F2> :NERDTreeToggle<CR>
+"noremap <silent> <F2> :NERDTreeToggle<CR>
+noremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
@@ -296,7 +298,8 @@ endfunction
 
 " close quickfix window.
 "nmap <F4> :cclose<CR>
-nmap <silent> <F4> :QFix<CR>
+"nmap <silent> <F4> :QFix<CR>
+nmap <silent> <leader>qf :QFix<CR>
 " next quickfix line.
 "map <F8> :cn<CR>
 " prev quickfix line.
@@ -322,7 +325,8 @@ endif
 "autocmd FileType dosbatch nmap <F5> :!%<CR><CR>
 
 set tags+=./.tags
-nnoremap <silent> <F3> :TagbarToggle<CR>
+"nnoremap <silent> <F3> :TagbarToggle<CR>
+nnoremap <silent> <leader>tb :TagbarToggle<CR>
 
 "Zencoding setting
 let g:user_zen_settings = {
@@ -426,3 +430,6 @@ nnoremap <S-Left> :vertical resize -5<cr>
 nnoremap <S-Down> :resize +5<cr>
 nnoremap <S-Up> :resize -5<cr>
 nnoremap <S-Right> :vertical resize +5<cr>
+
+" EditorConfig settings
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
