@@ -55,7 +55,8 @@ Plugin 'candy.vim'
 Plugin 'genutils'
 
 " Use vim-airline instead of powerline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts=1
 
@@ -80,7 +81,7 @@ Plugin 'https://github.com/vim-scripts/UltiSnips.git'
 
 Plugin 'Tagbar'
 Plugin 'tpope/vim-fugitive'
-Plugin 'wookiehangover/jshint.vim'
+" Plugin 'wookiehangover/jshint.vim'
 " Plugin 'ZenCoding.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'cocoa.vim'
@@ -98,6 +99,7 @@ Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'editorconfig-vim'
+Plugin 'Syntastic'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -433,3 +435,5 @@ nnoremap <S-Right> :vertical resize +5<cr>
 
 " EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+let g:syntastic_javascript_checkers = ['eslint']
