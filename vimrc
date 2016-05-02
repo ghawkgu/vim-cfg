@@ -81,8 +81,6 @@ Plugin 'https://github.com/vim-scripts/UltiSnips.git'
 
 Plugin 'Tagbar'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'wookiehangover/jshint.vim'
-" Plugin 'ZenCoding.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'cocoa.vim'
 
@@ -96,7 +94,6 @@ Plugin 'spllr/vim-padrino'
 Plugin 'slim-template/vim-slim'
 
 Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
-Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'editorconfig-vim'
 Plugin 'scrooloose/syntastic'
@@ -246,8 +243,6 @@ noremap <C-l> <C-w>l
 vnoremap <C-S> y:%s/<C-R>=escape(@", '.*/\[]^$+?\|{}()')<CR>//gc<Left><Left><Left>
 nnoremap <C-S> :%s/<C-R><C-W>//gc<Left><Left><Left>
 
-"LookupFile
-"nmap <unique> <silent> <C-S-R> <Plug>LookupFile
 
 "Toggle list mode on/off
 noremap <silent> <F10> :set list!<CR>
@@ -307,27 +302,8 @@ nmap <silent> <leader>qf :QFix<CR>
 " prev quickfix line.
 "map <F7> :cp<CR>
 " compile c/cpp code.
-" autocmd FileType cpp,c nmap <F5> :setlocal makeprg=make<CR>:make<CR> :copen<CR> <C-W>10_
-"autocmd FileType javascript nmap <F5> :make<CR>
-if exists("JsonLint")
-    autocmd FileType javascript nmap <F6> :call JsonLint()<CR>
-endif
-"autocmd FileType html,xhtml,css nmap <F5> :make<CR><CR>:copen<CR>
-"autocmd FileType cpp,c nmape <F10> :!g++ -o %:r.exe %<CR><CR>
-" @see http://easwy.com/blog/archives/advanced-vim-skills-quickfix-mode/
-"      http://blog.zdnet.com.cn/html/30/422230-2881199.html
-"autocmd FileType cpp nmap <F5> :w<CR>:setlocal makeprg=g++\ -Wall\ -o\ %:r.exe\ %<CR>:make<CR><CR>:cw<CR>
-"autocmd FileType c nmap <F5> :w<CR>:setlocal makeprg=gcc\ -Wall\ -o\ %:r.exe\ %<CR>:make<CR><CR>:cw<CR>
-" @see http://csstidy.sourceforge.net/
-" autocmd FileType css nmap <F5> :!csstidy %:p --preserve_css=false --remove_bslash=false --compress_color=true --lowercase_s=false --timestamp=false --optimise_shorthands=0 --remove_last_\;=true --sort_selectors=false --merge_selectors=0 --compress_font-weight=false --allow_html_in_template=false --silent=true --case_properties=0 --template=default %:p:r.min.%:p:e<CR><CR>
-" run current code.
-"autocmd FileType cpp,c nmap <F5> :!%:r.exe
-"autocmd FileType xhtml,html nmap <F5> :call Save2Temp()<CR><CR>:!start "E:\Mozilla Firefox\firefox.exe" -P debug %<CR>
-"autocmd FileType xhtml,html nmap <F5> :call Save2Temp()<CR><CR>:!start "RunDll32.exe shell32.dll,ShellExec_RunDLL %:p<CR>
-"autocmd FileType dosbatch nmap <F5> :!%<CR><CR>
 
 set tags+=./.tags
-"nnoremap <silent> <F3> :TagbarToggle<CR>
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
 
 "Zencoding setting
