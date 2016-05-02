@@ -99,7 +99,7 @@ Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'editorconfig-vim'
-Plugin 'Syntastic'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -436,4 +436,6 @@ nnoremap <S-Right> :vertical resize +5<cr>
 " EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['standard']
+autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') != '' ? ['eslint'] : ['standard']
