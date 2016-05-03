@@ -57,8 +57,7 @@ Plugin 'genutils'
 " Use vim-airline instead of powerline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts=1
+source  $VIMFILES/airline-settings.vim
 
 Plugin 'The-NERD-tree'
 Plugin 'tomtom/tcomment_vim'
