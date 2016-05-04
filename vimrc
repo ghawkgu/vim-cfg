@@ -9,81 +9,79 @@ endif
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when xterm-keys is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" ...
+" Load vim-plug
+if empty(glob("~/.vim/autoload/plug.vim"))
+  execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'EasyMotion'
+call plug#begin('~/.vim/plugged')
 
-Bundle 'molokai'
-Bundle 'jellybeans.vim'
-Bundle 'wombat256.vim'
-Bundle 'Wombat'
-Bundle 'tir_black'
-Bundle 'railscasts'
-Bundle 'sexy-railscasts'
-Bundle 'candy.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'EasyMotion'
+Plug 'DrawIt'
 
-Bundle 'genutils'
+Plug 'molokai'
+Plug 'jellybeans.vim'
+Plug 'wombat256.vim'
+Plug 'Wombat'
+Plug 'tir_black'
+Plug 'railscasts'
+Plug 'sexy-railscasts'
+Plug 'candy.vim'
+
+Plug 'genutils'
 
 " Use vim-airline instead of powerline
-Bundle 'bling/vim-airline'
-let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts=1
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+source  $VIMFILES/airline-settings.vim
 
-Bundle 'The-NERD-tree'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'ap/vim-css-color'
+Plug 'The-NERD-tree'
+Plug 'tomtom/tcomment_vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'plasticboy/vim-markdown'
+Plug 'ap/vim-css-color'
 
-" Command-T:  Remember to build the plugin with the system ruby 1.8.7 on Mac OS X
-" Bundle 'Command-T'
-Bundle 'ctrlp.vim'
-Bundle 'matchit.zip'
-Bundle 'ack.vim'
+Plug 'ctrlp.vim'
+Plug 'matchit.zip'
+" Plugin 'ack.vim'
+Plug 'rking/ag.vim'
 
-Bundle 'honza/vim-snippets'
-Bundle 'https://github.com/Shougo/neocomplete.git'
-Bundle 'https://github.com/Shougo/neosnippet.git'
+" Plugin 'https://github.com/Shougo/neocomplete.git'
+" Plugin 'https://github.com/Shougo/neosnippet.git'
+Plug 'https://github.com/Valloric/YouCompleteMe.git', { 'do': './install.py --clang-completer' }
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-Bundle 'Tagbar'
-Bundle 'tpope/vim-fugitive'
-Bundle 'wookiehangover/jshint.vim'
-" Bundle 'ZenCoding.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'cocoa.vim'
+Plug 'Tagbar'
+Plug 'tpope/vim-fugitive'
+Plug 'mattn/emmet-vim'
+Plug 'cocoa.vim'
 
-Bundle 'ruby.vim'
+Plug 'ruby.vim'
 if has('ruby')
-  Bundle 'rubycomplete.vim'
+  Plug 'rubycomplete.vim'
 endif
 " Bug-free rails.vim
-Bundle 'tpope/vim-rails.git'
-Bundle 'spllr/vim-padrino'
-Bundle 'slim-template/vim-slim'
+Plug 'tpope/vim-rails'
+Plug 'spllr/vim-padrino'
+Plug 'slim-template/vim-slim'
 
-Bundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
-Bundle 'kchmck/vim-coffee-script'
+Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+
+Plug 'editorconfig-vim'
+Plug 'scrooloose/syntastic'
+
+call plug#end()
 
 filetype plugin indent on     " required!
 "
@@ -114,7 +112,10 @@ set smarttab
 set expandtab
 set smartindent
 set incsearch
+set ignorecase
 set smartcase
+
+set lazyredraw
 
 set hlsearch "high-light search
 "The cursor jumps to the paired one if showmatch is turned on,
@@ -173,8 +174,11 @@ function! GetStatusEx()
     return str
 endfunction
 
-" neocomplete
-source $VIMFILES/neocomplete.vim
+" Auto complete settings
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" let g:UltiSnipsExpandTrigger="<s-tab>"
+source $VIMFILES/ycm_with_ultrisnip.vim
+" source $VIMFILES/neocomplete.vim
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
@@ -212,13 +216,17 @@ cnoremap <C-B> <Left>
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
+" Easy window navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 "全置換マップ
 " vnoremap <C-S> y:%s/<C-R>"//gc<Left><Left><Left>
 vnoremap <C-S> y:%s/<C-R>=escape(@", '.*/\[]^$+?\|{}()')<CR>//gc<Left><Left><Left>
 nnoremap <C-S> :%s/<C-R><C-W>//gc<Left><Left><Left>
 
-"LookupFile
-"nmap <unique> <silent> <C-S-R> <Plug>LookupFile
 
 "Toggle list mode on/off
 noremap <silent> <F10> :set list!<CR>
@@ -235,10 +243,10 @@ noremap <silent> <F9> :set number!<CR>
 "Toggle cursor line/column highlight on/off
 "To override the default color, apply the following settings:
 "ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-highlight CursorLine   cterm=underline gui=underline
-"highlight CursorLine cterm=none gui=none
+" highlight CursorLine cterm=underline gui=underline
+highlight CursorLine term=none cterm=none gui=none
 "highlight CursorColumn cterm=none gui=none
-set nocursorline
+" set nocursorline
 "set cursorcolumn
 nnoremap <silent> <F11> :set cursorline!<CR>
 
@@ -247,8 +255,9 @@ noremap <silent> <F12> :set hlsearch!<CR>
 
 "Toggle NERD tree
 let g:NERDTreeWinPos="left"
-let g:NERDTreeWinSize=30
-noremap <silent> <F2> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=40
+"noremap <silent> <F2> :NERDTreeToggle<CR>
+noremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
@@ -270,33 +279,16 @@ endfunction
 
 " close quickfix window.
 "nmap <F4> :cclose<CR>
-nmap <silent> <F4> :QFix<CR>
+"nmap <silent> <F4> :QFix<CR>
+nmap <silent> <leader>qf :QFix<CR>
 " next quickfix line.
 "map <F8> :cn<CR>
 " prev quickfix line.
 "map <F7> :cp<CR>
 " compile c/cpp code.
-" autocmd FileType cpp,c nmap <F5> :setlocal makeprg=make<CR>:make<CR> :copen<CR> <C-W>10_
-"autocmd FileType javascript nmap <F5> :make<CR>
-if exists("JsonLint")
-    autocmd FileType javascript nmap <F6> :call JsonLint()<CR>
-endif
-"autocmd FileType html,xhtml,css nmap <F5> :make<CR><CR>:copen<CR>
-"autocmd FileType cpp,c nmape <F10> :!g++ -o %:r.exe %<CR><CR>
-" @see http://easwy.com/blog/archives/advanced-vim-skills-quickfix-mode/
-"      http://blog.zdnet.com.cn/html/30/422230-2881199.html
-"autocmd FileType cpp nmap <F5> :w<CR>:setlocal makeprg=g++\ -Wall\ -o\ %:r.exe\ %<CR>:make<CR><CR>:cw<CR>
-"autocmd FileType c nmap <F5> :w<CR>:setlocal makeprg=gcc\ -Wall\ -o\ %:r.exe\ %<CR>:make<CR><CR>:cw<CR>
-" @see http://csstidy.sourceforge.net/
-" autocmd FileType css nmap <F5> :!csstidy %:p --preserve_css=false --remove_bslash=false --compress_color=true --lowercase_s=false --timestamp=false --optimise_shorthands=0 --remove_last_\;=true --sort_selectors=false --merge_selectors=0 --compress_font-weight=false --allow_html_in_template=false --silent=true --case_properties=0 --template=default %:p:r.min.%:p:e<CR><CR>
-" run current code.
-"autocmd FileType cpp,c nmap <F5> :!%:r.exe
-"autocmd FileType xhtml,html nmap <F5> :call Save2Temp()<CR><CR>:!start "E:\Mozilla Firefox\firefox.exe" -P debug %<CR>
-"autocmd FileType xhtml,html nmap <F5> :call Save2Temp()<CR><CR>:!start "RunDll32.exe shell32.dll,ShellExec_RunDLL %:p<CR>
-"autocmd FileType dosbatch nmap <F5> :!%<CR><CR>
 
 set tags+=./.tags
-nnoremap <silent> <F3> :TagbarToggle<CR>
+nnoremap <silent> <leader>tb :TagbarToggle<CR>
 
 "Zencoding setting
 let g:user_zen_settings = {
@@ -328,11 +320,11 @@ function! EnableCursorLine()
 endfunction
 
 " Highlight the cursorline only in the active window.
-" augroup CursorLine
-"     au!
-"     au VimEnter,WinEnter,BufWinEnter * call EnableCursorLine()
-"     au WinLeave * setlocal nocursorline
-" augroup END
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * call EnableCursorLine()
+    au WinLeave * setlocal nocursorline
+augroup END
 
 " Eliminate the trailing space.
 function! RemoveTrailingSpaces()
@@ -359,13 +351,15 @@ vnoremap <silent> <Enter> :EasyAlign<cr>
 function! EnterInsertMode()
     setlocal listchars-=eol:¬
     setlocal list
-    setlocal cursorline
+    highlight CursorLine term=underline cterm=underline gui=underline
+    " setlocal cursorline
 endfunction
 
 function! ExitInsertMode()
     setlocal listchars+=eol:¬
     setlocal nolist
-    setlocal nocursorline
+    highlight CursorLine term=none cterm=none gui=none
+    " setlocal nocursorline
 endfunction
 
 augroup HighlightSpecialKeys
@@ -373,3 +367,35 @@ augroup HighlightSpecialKeys
     au InsertEnter * call EnterInsertMode()
     au InsertLeave * call ExitInsertMode()
 augroup END
+
+let g:vim_markdown_folding_disabled=1
+
+" Fugitive {{{
+let g:fugitive_github_domains = ['github.com']
+
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>ga :Gadd<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gco :Gcheckout<cr>
+nnoremap <leader>gci :Gcommit<cr>
+nnoremap <leader>gm :Gmove<cr>
+nnoremap <leader>gr :Gremove<cr>
+nnoremap <leader>gl :! git lg <cr>:wincmd \|<cr>
+" }}}
+
+highlight SpellBad cterm=standout ctermfg=red ctermbg=none
+
+" resize current buffer by +/- 5
+nnoremap <S-Left> :vertical resize -5<cr>
+nnoremap <S-Down> :resize +5<cr>
+nnoremap <S-Up> :resize -5<cr>
+nnoremap <S-Right> :vertical resize +5<cr>
+
+" EditorConfig settings
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['standard']
+autocmd FileType javascript let b:syntastic_checkers = glob('*eslintrc*', '.;') != '' ? ['eslint'] : ['standard']
