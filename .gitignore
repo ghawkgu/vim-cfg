@@ -1,4 +1,6 @@
 bundle
+autoload/plug.vim
+plugged
 tmp/**/*
 bak/**/*
 !tmp/.empty
