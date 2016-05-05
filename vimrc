@@ -122,9 +122,10 @@ set hlsearch "high-light search
 "this really bothers me.
 "set showmatch
 
-if $TMUX == ''
-    set clipboard+=unnamed
-endif
+" if $TMUX == '' # Since the clipboard is working fine under tmux
+set clipboard+=unnamed
+set clipboard+=unnamedplus
+" endif
 
 "colorscheme ir_black
 let g:molokai_original=1
@@ -399,3 +400,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_checkers = ['standard']
 autocmd FileType javascript let b:syntastic_checkers = glob('*eslintrc*', '.;') != '' ? ['eslint'] : ['standard']
+
+if has('nvim')
+  source $VIMFILES/nvim-settings.vim
+endif
