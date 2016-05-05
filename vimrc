@@ -46,7 +46,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 source  $VIMFILES/airline-settings.vim
 
-Plug 'The-NERD-tree'
+" Plug 'The-NERD-tree'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'plasticboy/vim-markdown'
