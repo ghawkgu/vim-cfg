@@ -264,7 +264,7 @@ noremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " QUICKFIX WINDOW
 " @see http://c9s.blogspot.com/2007/10/vim-quickfix-windows.html
