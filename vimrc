@@ -17,6 +17,8 @@ if &term =~ '^screen'
     execute "set <xLeft>=\e[1;*D"
 endif
 
+" Disable ruby (neovim)
+let g:loaded_ruby_provider = 1
 
 " Load vim-plug
 if empty(glob("~/.vim/autoload/plug.vim"))
@@ -78,7 +80,9 @@ Plug 'tpope/vim-rails'
 Plug 'spllr/vim-padrino'
 Plug 'slim-template/vim-slim'
 
-Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 
 Plug 'editorconfig-vim'
 Plug 'scrooloose/syntastic'

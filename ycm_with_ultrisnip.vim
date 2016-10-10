@@ -1,3 +1,5 @@
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
 " Check http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme for details
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippetOrJump()
