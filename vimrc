@@ -83,6 +83,7 @@ Plug 'slim-template/vim-slim'
 Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
+Plug 'posva/vim-vue'
 
 Plug 'editorconfig-vim'
 Plug 'scrooloose/syntastic'
