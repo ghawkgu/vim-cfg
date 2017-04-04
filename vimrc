@@ -44,9 +44,12 @@ Plug 'candy.vim'
 Plug 'genutils'
 
 " Use vim-airline instead of powerline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-source  $VIMFILES/airline-settings.vim
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" source  $VIMFILES/airline-settings.vim
+
+Plug 'itchyny/lightline.vim'
+source  $VIMFILES/lightline-settings.vim
 
 " Plug 'The-NERD-tree'
 Plug 'scrooloose/nerdtree'
