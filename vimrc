@@ -29,19 +29,19 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'EasyMotion'
-Plug 'DrawIt'
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-scripts/DrawIt'
 
-Plug 'molokai'
-Plug 'jellybeans.vim'
-Plug 'wombat256.vim'
-Plug 'Wombat'
-Plug 'tir_black'
-Plug 'railscasts'
-Plug 'sexy-railscasts'
-Plug 'candy.vim'
+Plug 'vim-scripts/molokai'
+Plug 'vim-scripts/jellybeans.vim'
+Plug 'vim-scripts/wombat256.vim'
+Plug 'vim-scripts/Wombat'
+Plug 'vim-scripts/tir_black'
+Plug 'vim-scripts/railscasts'
+Plug 'vim-scripts/sexy-railscasts'
+Plug 'vim-scripts/candy.vim'
 
-Plug 'genutils'
+Plug 'vim-scripts/genutils'
 
 " Use vim-airline instead of powerline
 " Plug 'vim-airline/vim-airline'
@@ -59,8 +59,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'plasticboy/vim-markdown'
 Plug 'ap/vim-css-color'
 
-Plug 'ctrlp.vim'
-Plug 'matchit.zip'
+Plug 'vim-scripts/ctrlp.vim'
+Plug 'vim-scripts/matchit.zip'
 " Plugin 'ack.vim'
 Plug 'rking/ag.vim'
 
@@ -69,14 +69,14 @@ Plug 'rking/ag.vim'
 Plug 'https://github.com/Valloric/YouCompleteMe.git', { 'do': './install.py --clang-completer' }
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-Plug 'Tagbar'
+Plug 'vim-scripts/Tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
-Plug 'cocoa.vim'
+Plug 'vim-scripts/cocoa.vim'
 
-Plug 'ruby.vim'
+Plug 'vim-scripts/ruby.vim'
 if has('ruby')
-  Plug 'rubycomplete.vim'
+  Plug 'vim-scripts/rubycomplete.vim'
 endif
 " Bug-free rails.vim
 Plug 'tpope/vim-rails'
@@ -87,8 +87,9 @@ Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git', { 'for': '
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'posva/vim-vue'
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 
-Plug 'editorconfig-vim'
+Plug 'vim-scripts/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 
 call plug#end()
