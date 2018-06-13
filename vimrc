@@ -66,7 +66,7 @@ Plug 'rking/ag.vim'
 
 " Plugin 'https://github.com/Shougo/neocomplete.git'
 " Plugin 'https://github.com/Shougo/neosnippet.git'
-Plug 'https://github.com/Valloric/YouCompleteMe.git', { 'do': './install.py --clang-completer' }
+Plug 'https://github.com/Valloric/YouCompleteMe.git', { 'do': '/usr/local/bin/python3 ./install.py --clang-completer' }
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 Plug 'vim-scripts/Tagbar'
