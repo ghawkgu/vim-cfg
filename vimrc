@@ -115,6 +115,7 @@ set numberwidth=5
 set fencs=utf-8,eucjp,shiftjis,gb18030,gbk
 set enc=utf-8
 
+set scrolloff=5
 set wildmenu
 set nonumber
 set tabstop=4
