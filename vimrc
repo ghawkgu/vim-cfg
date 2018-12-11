@@ -89,6 +89,10 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'posva/vim-vue'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
 Plug 'vim-scripts/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 
