@@ -201,8 +201,12 @@ source $VIMFILES/ycm_with_ultrisnip.vim
 let g:Powerline_symbols = 'fancy'
 if has('gui_running')
   " Set font for macvim. The font can be downloaded from https://gist.github.com/1838072 .
-  set guifont=Monaco\ for\ Powerline:h12
-  set linespace=-1
+  set guifont=Menlo\ for\ Powerline:h12
+  set linespace=1
+
+  " set guifont=Monaco\ for\ Powerline:h12
+  " set linespace=-1
+  "
   " set guifont=Anonymous\ Pro\ for\ Powerline:h14
   " set linespace=3
   " set transparency=5        " set transparent window
