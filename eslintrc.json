@@ -1,6 +1,43 @@
 {
-  "extends": ["standard", "standard-jsx"],
-  "parser": "babel-eslint",
+  "extends": [
+    "standard",
+    "plugin:prettier/recommended",
+    "plugin:vue/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "vue"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "extraFileExtensions": [".vue"]
+  },
+  "rules": {
+    "@typescript-eslint/adjacent-overload-signatures": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false,
+        "printWidth": 120
+      }
+    ],
+    "yoda": "off",
+    "react/prop-types": "off",
+    "import/first": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-dupe-class-members": "off"
+  },
+  "globals": {
+    "fetch": false
+  },
   "env": {
     "browser": true,
     "node": true,

@@ -6,6 +6,9 @@ else
     let $V = $HOME.'/.vimrc'
 endif
 
+" let node_path
+let g:coc_node_path = glob('~/.nvm/versions/node/v12.13.0/bin/node')
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -66,7 +69,7 @@ Plug 'rking/ag.vim'
 
 " Plugin 'https://github.com/Shougo/neocomplete.git'
 " Plugin 'https://github.com/Shougo/neosnippet.git'
-Plug 'https://github.com/Valloric/YouCompleteMe.git', { 'do': '/usr/local/bin/python3 ./install.py --clang-completer' }
+" Plug 'https://github.com/Valloric/YouCompleteMe.git', { 'do': '/usr/local/bin/python3 ./install.py --clang-completer' }
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 Plug 'vim-scripts/Tagbar'
@@ -96,6 +99,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-scripts/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 filetype plugin indent on     " required!
@@ -171,6 +175,7 @@ autocmd Filetype ruby  setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype eruby setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype yaml  setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript,coffee  setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype typescript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype text  setlocal textwidth=0
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -194,7 +199,7 @@ endfunction
 " Auto complete settings
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " let g:UltiSnipsExpandTrigger="<s-tab>"
-source $VIMFILES/ycm_with_ultrisnip.vim
+" source $VIMFILES/ycm_with_ultrisnip.vim
 " source $VIMFILES/neocomplete.vim
 
 " Powerline settings
@@ -417,9 +422,10 @@ nnoremap <S-Right> :vertical resize +5<cr>
 " EditorConfig settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+" eslint is supported by the coc-eslint extension
 " let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_checkers = ['standard']
-autocmd FileType javascript let b:syntastic_checkers = glob('*eslintrc*', '.;') != '' ? ['eslint'] : ['standard']
+" autocmd FileType javascript let b:syntastic_checkers = glob('*eslintrc*', '.;') != '' ? ['eslint'] : ['standard']
 
 if has('nvim')
   source $VIMFILES/nvim-settings.vim
