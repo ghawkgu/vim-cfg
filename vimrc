@@ -88,12 +88,16 @@ Plug 'slim-template/vim-slim'
 
 Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
-Plug 'posva/vim-vue'
-Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+" Plug 'posva/vim-vue'
+Plug 'mxw/vim-jsx' ", { 'for': 'javascript.jsx' }
+" Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+" Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'prettier/vim-prettier', {
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" let g:prettier#config#print_width = 120
 
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 Plug 'vim-scripts/editorconfig-vim'
