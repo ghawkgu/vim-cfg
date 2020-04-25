@@ -301,6 +301,9 @@ function! QFixToggle(forced)
         let g:qfix_win = bufnr("$")
     endif
 endfunction
+"Open file from the quickfix window in vertial split
+autocmd! FileType qf nnoremap <buffer> <leader>vs <C-w><Enter><C-w>L
+
 "nnoremap <leader>q :QFix<CR>
 
 " close quickfix window.
