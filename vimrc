@@ -7,7 +7,8 @@ else
 endif
 
 " let node_path
-let g:coc_node_path = glob('~/.nvm/versions/node/v12.13.0/bin/node')
+" Always use the current node
+" let g:coc_node_path = glob('~/.nvm/versions/node/v12.13.0/bin/node')
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -67,10 +68,8 @@ Plug 'vim-scripts/matchit.zip'
 " Plugin 'ack.vim'
 Plug 'rking/ag.vim'
 
-" Plugin 'https://github.com/Shougo/neocomplete.git'
-" Plugin 'https://github.com/Shougo/neosnippet.git'
-" Plug 'https://github.com/Valloric/YouCompleteMe.git', { 'do': '/usr/local/bin/python3 ./install.py --clang-completer' }
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'vim-scripts/Tagbar'
 Plug 'tpope/vim-fugitive'
@@ -201,10 +200,7 @@ function! GetStatusEx()
 endfunction
 
 " Auto complete settings
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<s-tab>"
-" source $VIMFILES/ycm_with_ultrisnip.vim
-" source $VIMFILES/neocomplete.vim
+source $VIMFILES/coc-snippets.vim
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
@@ -374,6 +370,7 @@ augroup END
 
 " CtrlP's key mapping
 let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlPMixed' " 'CtrlPMRUFiles'
 
 " vim-padrino's bug
 let g:padrino_statusline=0
