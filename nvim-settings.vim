@@ -10,7 +10,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-let g:python3_host_prog = "$HOME/.pyenv/shims/python"
+let g:python3_host_prog = "$HOME/.local/share/virtualenvs/py-nvim-uDi703Mj/bin/python3"
 
 " let g:python_version = matchstr(system("python --version | cut -f2 -d' '"), '^[0-9]')
 " if g:python_version =~ 3

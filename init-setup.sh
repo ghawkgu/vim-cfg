@@ -22,6 +22,12 @@ npm install -g eslint                     \
 ln -nfs $HOME/.vim/eslintrc $HOME/.eslintrc
 ln -nfs $HOME/.vim/prettierrc.json $HOME/.prettierrc.json
 
+mkdir py-nvim
+cd py-nvim
+pipenv install neovim
+echo "Please update the python exec in the nvim-settings.vim"
+cd ..
+
 # And install these coc extensions
 # coc-ultisnips 1.2.3 ~/.config/coc/extensions/node_modules/coc-ultisnips
 # coc-sh 0.4.0 ~/.config/coc/extensions/node_modules/coc-sh
