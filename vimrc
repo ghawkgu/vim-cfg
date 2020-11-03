@@ -102,6 +102,23 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-scripts/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 
+let g:coc_global_extensions =
+  \ [
+  \ 'coc-ccls',
+  \ 'coc-css',
+  \ 'coc-docker',
+  \ 'coc-eslint',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-python',
+  \ 'coc-sh',
+  \ 'coc-snippets',
+  \ 'coc-solargraph',
+  \ 'coc-tsserver',
+  \ 'coc-ultisnips',
+  \ 'coc-vetur'
+  \ ]
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
