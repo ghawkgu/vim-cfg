@@ -225,7 +225,7 @@ source $VIMFILES/coc-config.vim
 let g:Powerline_symbols = 'fancy'
 if has('gui_running')
   " Set font for macvim. The font can be downloaded from https://gist.github.com/1838072 .
-  set guifont=Menlo\ for\ Powerline:h12
+  set guifont=MenloForPowerline-Regular:h12
   set linespace=1
 
   " set guifont=Monaco\ for\ Powerline:h12
