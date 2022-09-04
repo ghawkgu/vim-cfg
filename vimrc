@@ -8,7 +8,7 @@ endif
 
 " let node_path
 " Always use the current node
-" let g:coc_node_path = glob('~/.nvm/versions/node/v12.13.0/bin/node')
+let g:coc_node_path = glob('~/.nvm/versions/node/v16.13.1/bin/node')
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -87,13 +87,15 @@ Plug 'slim-template/vim-slim'
 
 Plug 'https://github.com/othree/javascript-libraries-syntax.vim.git', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'posva/vim-vue'
-Plug 'mxw/vim-jsx' ", { 'for': 'javascript.jsx' }
+Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'posva/vim-vue'
+" Plug 'mxw/vim-jsx' ", { 'for': 'javascript.jsx' }
 " Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'prettier/vim-prettier', {
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'prettier/vim-prettier', {
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " let g:prettier#config#print_width = 120
 
 
@@ -217,7 +219,7 @@ function! GetStatusEx()
 endfunction
 
 " Auto complete settings
-source $VIMFILES/coc-snippets.vim
+source $VIMFILES/coc-config.vim
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
@@ -424,10 +426,10 @@ let g:vim_markdown_folding_disabled=1
 let g:fugitive_github_domains = ['github.com']
 
 nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gs :Git<cr>
 nnoremap <leader>gw :Gwrite<cr>
 nnoremap <leader>ga :Gadd<cr>
-nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gb :G blame<cr>
 nnoremap <leader>gco :Gcheckout<cr>
 nnoremap <leader>gci :Gcommit<cr>
 nnoremap <leader>gm :Gmove<cr>
@@ -453,4 +455,14 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 if has('nvim')
   source $VIMFILES/nvim-settings.vim
+endif
+
+" Send more characters for redraws
+set ttyfast
+" Enable mouse use in all modes
+set mouse=a
+" Set this to the name of your terminal that supports mouse codes.
+" Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
+if !has('nvim')
+  set ttymouse=xterm2
 endif
