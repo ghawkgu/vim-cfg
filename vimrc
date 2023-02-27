@@ -7,8 +7,8 @@ else
 endif
 
 " let node_path
-" Always use the current node
-let g:coc_node_path = glob('~/.nvm/versions/node/v16.13.1/bin/node')
+" The COC tries to use the default node in your PATH
+" let g:coc_node_path = glob('~/.nvm/versions/node/v16.19.1/bin/node')
 
 set nocompatible               " be iMproved
 filetype off                   " required!
